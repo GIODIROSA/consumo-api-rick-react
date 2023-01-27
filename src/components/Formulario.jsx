@@ -14,7 +14,6 @@ const Formulario = ({ setNombre }) => {
     e.preventDefault();
 
     if (!nombre.trim()) {
-      e.focus();
       return Swal.fire({
         title: "Error!",
         text: "Nombre obligatorio",
@@ -22,7 +21,7 @@ const Formulario = ({ setNombre }) => {
       });
     }
 
-    setNombre(nombre.toLowerCase());
+    setNombre(nombre.trim().toLowerCase());
 
     reset();
   };

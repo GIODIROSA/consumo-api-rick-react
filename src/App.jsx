@@ -3,6 +3,7 @@ import "./App.css";
 import Formulario from "./components/Formulario";
 import PintarPersonajes from "./components/PintarPersonajes";
 
+
 function App() {
   const [nombre, setNombre] = useState("");
 
@@ -14,6 +15,7 @@ function App() {
         Reiniciar
       </button>
       <PintarPersonajes nombre={nombre} />
+      
     </div>
   );
 }

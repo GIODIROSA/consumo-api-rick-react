@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import Personaje from "../components/Personaje";
 
 const PintarPersonajes = ({ nombre }) => {
   const [personajes, setPersonajes] = useState([]);
@@ -32,7 +33,11 @@ const PintarPersonajes = ({ nombre }) => {
 
   return (
     <div className="container">
-      <h2>{nombre}</h2>
+      <div className="row mt-2">
+        {personajes.map((item) => (
+          <Personaje key={item.id} personaje={item} />
+        ))}
+      </div>
     </div>
   );
 };

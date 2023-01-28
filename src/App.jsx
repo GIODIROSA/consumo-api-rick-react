@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Formulario from "./components/Formulario";
 import PintarPersonajes from "./components/PintarPersonajes";
@@ -6,13 +6,15 @@ import PintarPersonajes from "./components/PintarPersonajes";
 function App() {
   const [nombre, setNombre] = useState("");
 
-  // pendiente
-  // useEffect(() => {
-  //   if (localStorage.getItem("nombreApi")) {
-  //     setNombre(JSON.parse(localStorage.getItem("nombreApi")));
-  //   }
-  //    localStorage.setItem("nombreApi", JSON.stringify(nombre));
-  // }, [nombre]);
+  useEffect(() => {
+    if (localStorage.getItem("nombreApi")) {
+      setNombre(JSON.parse(localStorage.getItem("nombreApi")));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("nombreApi", JSON.stringify(nombre));
+  }, [nombre]);
 
   return (
     <div className="container">

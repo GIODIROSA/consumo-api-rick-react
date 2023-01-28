@@ -6,6 +6,14 @@ import PintarPersonajes from "./components/PintarPersonajes";
 function App() {
   const [nombre, setNombre] = useState("");
 
+  // pendiente
+  // useEffect(() => {
+  //   if (localStorage.getItem("nombreApi")) {
+  //     setNombre(JSON.parse(localStorage.getItem("nombreApi")));
+  //   }
+  //    localStorage.setItem("nombreApi", JSON.stringify(nombre));
+  // }, [nombre]);
+
   return (
     <div className="container">
       <h1>Aplicación de Rick and Morty</h1>
